@@ -54,7 +54,7 @@ Four approaches, each trained on the same 6,000/2,000 train/test split, tracked 
 1. **A fancier model is not automatically a better one.** It depends on whether the real pattern needs the extra flexibility. Here it didn't, and logistic regression proved it.
 2. **Fixing class imbalance mattered more than switching model families.** SMOTE alone closed most of the gap that model choice was expected to close.
 3. **The metric you optimize for changes which model "wins."** By ROC AUC, logistic regression is best. By F1 and recall, SMOTE-balanced LightGBM is best. Neither answer is wrong; they're answering different questions about what the model is for.
-4. **Correlated features can quietly hide their own importance** (seen in the income-pair test in Day 11's explainability notebook) — worth checking before trusting any single feature-importance ranking.
+4. **Correlated features can quietly hide their own importance** (seen in the income-pair test in loan default model explainability notebook) — worth checking before trusting any single feature-importance ranking.
 
 ## What I'd try next
 
