@@ -12,14 +12,14 @@ This matters because a bank has to decide, in seconds, whether an application is
 
 8,000 synthetic loan applicants (about 24.5 percent default rate), generated with planted rules so the "true" pattern is known and any model's ranking of feature importance can be checked against ground truth. Full generation code is in `scripts/run_experiments.py`.
 
-I built the data myself rather than pulling a public dataset for two reasons: it let me directly test whether SHAP and permutation importance (Day 11) actually find the true drivers of default, and it meant every downstream day in this series (explainability, deployment, tracking) works off the same known ground truth instead of restarting from scratch.
+I built the data myself rather than pulling a public dataset for two reasons: it let me directly test whether SHAP and permutation importance (loan default model) actually find the true drivers of default, and it meant every downstream day in this series (explainability, deployment, tracking) works off the same known ground truth instead of restarting from scratch.
 
 ## EDA
 
 The main things worth flagging before modeling:
 
 - **Class imbalance.** Roughly 1 in 4 applicants defaults, not 1 in 2. A model that just always predicts "no default" would already be 75 percent accurate while being useless, so accuracy alone was never going to be the metric that mattered.
-- **A near-duplicate feature pair.** `annual_income` and a second column meant to represent monthly income reported separately (used in the Day 11 explainability notebook) are almost perfectly correlated. Left unchecked, this splits importance between two columns that are really saying one thing.
+- **A near-duplicate feature pair.** `annual_income` and a second column meant to represent monthly income reported separately (used in the loan default model explainability notebook) are almost perfectly correlated. Left unchecked, this splits importance between two columns that are really saying one thing.
 - **No missing values, no extreme outliers** — this being synthetic data, real-world messiness (typos, unit mismatches, missing fields) isn't present, which is a real limitation noted below.
 
 ## Feature engineering
