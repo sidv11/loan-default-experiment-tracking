@@ -67,4 +67,4 @@ Four approaches, each trained on the same 6,000/2,000 train/test split, tracked 
 
 - Full run script and MLflow tracking setup: `scripts/run_experiments.py`, `README.md`
 - Feature importance and per-customer explanations for the deployed model: loan default model explainability(https://github.com/sidv11/loan-default-model-explainability) notebook
-- The trained model served as an API with a working frontend: Day 12's FastAPI + Streamlit project
+- The trained model served as an API with a working frontend: loan default model FastAPI + Streamlit project (https://github.com/sidv11/loan-default-model-api)
