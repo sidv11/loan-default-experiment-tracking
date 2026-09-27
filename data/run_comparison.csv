@@ -1,0 +1,5 @@
+run,model_type,roc_auc,pr_auc,precision_at_0.5,recall_at_0.5,f1_at_0.5,train_seconds
+01_logistic_regression_baseline,logistic_regression,0.8021,0.5709,0.6262,0.3992,0.4876,0.048
+02_tuned_decision_tree,decision_tree,0.7392,0.4749,0.5183,0.4623,0.4887,0.048
+03_lightgbm,lightgbm,0.7834,0.5529,0.605,0.3931,0.4765,2.167
+04_lightgbm_smote_balanced,lightgbm,0.7747,0.5404,0.5065,0.556,0.5301,0.194
